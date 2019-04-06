@@ -4,12 +4,18 @@
     <g-Button icon="setting"> 111</g-Button>
     <g-Button icon-position="right" icon="setting"> 111</g-Button>
     <g-Button icon="download" :loading="isLoading" @click="isLoading = !isLoading"> 111</g-Button>
+     <g-button-group>
+    <g-button icon="left">上一页</g-button>
+      <g-button>更多</g-button>
+      <g-button icon="right" icon-position="right">下一页</g-button>
+    </g-button-group>
   </div>
 </template>
 
 <script>
 import gButton from './components/button.vue'
 import gIcon from './components/icon.vue'
+import gButtonGroup from './components/buttonGroup.vue'
 export default {
   name: 'App',
   data:function(){
@@ -18,7 +24,7 @@ export default {
     }
   },
   components:{
-    gButton,gIcon
+    gButton,gIcon,gButtonGroup
   },
   mounted() {
     const s = document.createElement('script');
