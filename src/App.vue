@@ -3,8 +3,7 @@
     <!-- <router-view/> -->
     <g-Button icon="setting"> 111</g-Button>
     <g-Button icon-position="right" icon="setting"> 111</g-Button>
-    <g-Button icon="download"> 111</g-Button>
-    <g-icon name="download"></g-icon>
+    <g-Button icon="download" :loading="isLoading" @click="isLoading = !isLoading"> 111</g-Button>
   </div>
 </template>
 
@@ -13,13 +12,18 @@ import gButton from './components/button.vue'
 import gIcon from './components/icon.vue'
 export default {
   name: 'App',
+  data:function(){
+    return {
+        isLoading: true 
+    }
+  },
   components:{
     gButton,gIcon
   },
   mounted() {
     const s = document.createElement('script');
     s.type = 'text/javascript';
-    s.src = '//at.alicdn.com/t/font_1127796_uyhosru6kk.js';
+    s.src = '//at.alicdn.com/t/font_1127796_nndyhd11k3.js';
     document.body.appendChild(s);
   }
 }
