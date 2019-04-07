@@ -35,23 +35,23 @@ export default {
 }
 </script>
 
-<style>
+<style lang="less">
 * {margin: 0; padding: 0; box-sizing: border-box;}
-:root {
-  --button-height: 32px;
-  --font-size: 14px;
-  --button-bg: white;
-  --button-active-bg: #eee;
-  --border-radius: 4px;
-  --color: #333;
-  --border-color: #999;
-  --border-color-hover: #666;
-}
+
+@buttonHeight: 32px;
+@fontSize: 14px;
+@buttonBg: white;
+@buttonActiveBg: #eee;
+@borderRadius: 4px;
+@color: #333;
+@borderColor: #999;
+@borderColorHover: #666;
+
 #app {
   margin: 20px;
 }
 body {
-  font-size: var(--font-size);
+  font-size: @fontSize;
 }
 
 </style>

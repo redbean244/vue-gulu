@@ -2,7 +2,7 @@
   <button class="g-button" :class="{[`icon-${iconPosition}`] : true }" @click="$emit('click')">
     <g-icon v-if="icon && !loading" :name="icon" class="icon"></g-icon>
     <g-icon v-if="loading" name="loading" class="loading icon"></g-icon>
-    <div class="content">
+    <div class="contents">
         <slot></slot>
     </div>
   </button>
@@ -39,28 +39,38 @@ export default {
   0% {transform: rotate(0deg);}
   100% {transform: rotate(360deg);}
 }
+
+@buttonHeight: 32px;
+@fontSize: 14px;
+@buttonBg: white;
+@buttonActiveBg: #eee;
+@borderRadius: 4px;
+@color: #333;
+@borderColor: #999;
+@borderColorHover: #666;
+
 .g-button {
-  font-size: var(--font-size);
-  height: var(--button-height);
+  font-size: @fontSize;
+  height: @buttonHeight;
   padding: 0 1em;
-  border-radius: var(--border-radius);
-  border: 1px solid var(--border-color);
-  background: var(--button-bg);
+  border-radius: @borderRadius;
+  border: 1px solid @borderColor;
+  background: @buttonBg;
   display: inline-flex;
   justify-content: center;
   align-items: center;
   vertical-align: middle;
 
   &:hover {
-    border-color: var(--border-color-hover);
+    border-color: @borderColorHover;
   }
   &:active {
-    background-color: var(--button-active-bg);
+    background-color: @buttonActiveBg;
   }
   &:focus {
     outline: none;
   }
-  > .content{
+  > .contents{
     order: 2;
   }
   > .icon{
@@ -69,7 +79,7 @@ export default {
   }
 
   &.icon-right{
-    > .content{
+    > .contents{
       order: 1;
     }
     > .icon{
