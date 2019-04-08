@@ -1,7 +1,7 @@
 <template>
-  <button class="g-button" :class="{[`icon-${iconPosition}`] : true }" @click="$emit('click')">
+  <button class="g-button" :class="{[`icon-${iconPosition}`] : true ,[type] : true , plain , round , disabled}" @click="$emit('click')" :disabled = "disabled">
     <g-icon v-if="icon && !loading" :name="icon" class="icon"></g-icon>
-    <g-icon v-if="loading" name="loading" class="loading icon"></g-icon>
+    <g-icon v-if="icon && loading" name="loading" class="loading icon"></g-icon>
     <div class="contents">
         <slot></slot>
     </div>
@@ -23,31 +23,48 @@ export default {
         return value === 'left' || value === 'right'
       }
     },
+    type:{
+      type:String,
+      default: ""
+    },
+    plain:{
+      type:Boolean,
+      default: false
+    },
+    round:{
+      type:Boolean,
+      default: false
+    },
     loading:{
+      type:Boolean,
+      default:false
+    },
+    disabled:{
       type:Boolean,
       default:false
     }
   },
   components:{
     gIcon
-  }
+  },
+  // mounted() {
+  //   const s = document.createElement('script');
+  //   s.type = 'text/javascript';
+  //   s.src = '//at.alicdn.com/t/font_1127796_nndyhd11k3.js';
+  //   document.body.appendChild(s);
+  // }
 }
 </script>
 
 <style lang="less" scoped>
+@import url('../assets/css/base.less');
+@import url('../assets/css/reset.less');
+
 @keyframes spin{
   0% {transform: rotate(0deg);}
   100% {transform: rotate(360deg);}
 }
 
-@buttonHeight: 32px;
-@fontSize: 14px;
-@buttonBg: white;
-@buttonActiveBg: #eee;
-@borderRadius: 4px;
-@color: #333;
-@borderColor: #999;
-@borderColorHover: #666;
 
 .g-button {
   font-size: @fontSize;
@@ -62,11 +79,11 @@ export default {
   vertical-align: middle;
 
   &:hover {
-    border-color: @borderColorHover;
+    border-color: @primary;
+    color: @primary;
+    opacity: .6;
   }
-  &:active {
-    background-color: @buttonActiveBg;
-  }
+
   &:focus {
     outline: none;
   }
@@ -78,6 +95,50 @@ export default {
     margin-right: .3em;
   }
 
+  &.primary{
+    background-color: @primary;
+    border: 1px solid @primary;
+    color: #fff;
+  }
+  &.success{
+    background-color: @success;
+    border: 1px solid @success;
+    color: #fff;
+  }
+  &.info{
+    background-color: @info;
+    border: 1px solid @info;
+    color: #fff;
+  }
+  &.warning{
+    background-color: @warning;
+    border: 1px solid @warning;
+    color: #fff;
+  }
+  &.danger{
+    background-color: @danger;
+    border: 1px solid @danger;
+    color: #fff;
+  }
+
+  &.plain{
+    opacity: .6;
+    &:hover{
+      opacity: 1;
+    }
+  }
+
+  &.round{
+    border-radius: calc(@buttonHeight/2);
+  }
+
+  &.disabled{
+    cursor: not-allowed;
+  }
+  &.text{
+    border: none;
+    background-color: none;
+  }
   &.icon-right{
     > .contents{
       order: 1;
@@ -92,5 +153,4 @@ export default {
     animation: spin 1s infinite linear;
   }
 }
-
 </style>

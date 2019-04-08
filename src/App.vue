@@ -1,15 +1,34 @@
 <template>
   <div id="app">
-    <!-- <router-view/> -->
-    <g-Button icon="setting"> 111</g-Button>
-    <g-Button icon-position="right" icon="setting"> 111</g-Button>
-    <g-Button icon="download" :loading="isLoading" @click="isLoading = !isLoading"> 111</g-Button>
-     <g-button-group>
-    <g-button icon="left">上一页</g-button>
-      <g-button>更多</g-button>
-      <g-button icon="right" icon-position="right">下一页</g-button>
-    </g-button-group>
-  </div>
+    <div>
+      <g-button>默认按钮</g-button>
+      <g-button type="primary">主要按钮</g-button>
+      <g-button type="success">成功按钮</g-button>
+      <g-button type="info">信息按钮</g-button>
+      <g-button type="warning">警告按钮</g-button>
+      <g-button type="danger">危险按钮</g-button>
+    </div>
+
+    <div style="margin: 20px 0">
+      <g-button plain>朴素按钮</g-button>
+      <g-button type="primary" plain>主要按钮</g-button>
+      <g-button type="success" plain>成功按钮</g-button>
+      <g-button type="info" plain>信息按钮</g-button>
+      <g-button type="warning" plain>警告按钮</g-button>
+      <g-button type="danger" plain>危险按钮</g-button>
+    </div>
+
+    <div>
+      <g-button round>圆形按钮</g-button>
+      <g-button type="primary" round>主要按钮</g-button>
+      <g-button type="success" round>成功按钮</g-button>
+      <g-button type="info" round>信息按钮</g-button>
+      <g-button type="warning" round>警告按钮</g-button>
+      <g-button type="danger" round>危险按钮</g-button>
+    </div>
+</div>
+
+
 </template>
 
 <script>
@@ -25,18 +44,11 @@ export default {
   },
   components:{
     gButton,gIcon,gButtonGroup
-  },
-  mounted() {
-    const s = document.createElement('script');
-    s.type = 'text/javascript';
-    s.src = '//at.alicdn.com/t/font_1127796_nndyhd11k3.js';
-    document.body.appendChild(s);
   }
 }
 </script>
 
 <style lang="less">
-* {margin: 0; padding: 0; box-sizing: border-box;}
 
 @buttonHeight: 32px;
 @fontSize: 14px;
