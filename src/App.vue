@@ -1,11 +1,13 @@
 <template>
   <div id="app">
-    <div>
-        <g-button icon="setting"></g-button>
-        <g-button type="primary" icon="download" iconPosition="right">下载</g-button>
-        <g-button type="primary" icon="thumbs_up">赞</g-button>
-        <g-button type="primary" icon="up"></g-button>
-    </div>    
+        <div class="box">
+          <g-input value="张三" disabled></g-input>
+          <g-input value="李四" readonly></g-input>
+          <g-input value="王五"></g-input>
+        </div>
+        <div class="box">
+          <g-input value="王" error="姓名不能少于两个字"></g-input>
+        </div> 
 </div>
 
 
@@ -15,35 +17,23 @@
 import gButton from './components/button.vue'
 import gIcon from './components/icon.vue'
 import gButtonGroup from './components/buttonGroup.vue'
+import gInput from './components/input.vue'
 export default {
   name: 'App',
-  data:function(){
-    return {
-        isLoading: true 
-    }
-  },
   components:{
-    gButton,gIcon,gButtonGroup
+    gButton,gIcon,gButtonGroup,gInput
+  },
+  mounted() {
+    const s = document.createElement('script');
+    s.type = 'text/javascript';
+    s.src = '//at.alicdn.com/t/font_1127796_nndyhd11k3.js';
+    document.body.appendChild(s);
   }
 }
 </script>
 
 <style lang="less">
 
-@buttonHeight: 32px;
-@fontSize: 14px;
-@buttonBg: white;
-@buttonActiveBg: #eee;
-@borderRadius: 4px;
-@color: #333;
-@borderColor: #999;
-@borderColorHover: #666;
-
-#app {
-  margin: 20px;
-}
-body {
-  font-size: @fontSize;
-}
+ 
 
 </style>

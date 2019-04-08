@@ -14,7 +14,7 @@
         name: 'demo4',
         components:{
             gButton,gIcon
-        }
+        },
    }
 </script>
 <style  scoped>

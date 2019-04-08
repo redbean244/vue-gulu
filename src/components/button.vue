@@ -16,7 +16,7 @@ export default {
   props:{
     icon:{
       type: String,
-      default: "setting"
+      default: ""
     },
     iconPosition:{
       type:String,
