@@ -16,21 +16,22 @@
   }
 </script>
 <style lang="less">
+   @import url('../assets/css/base.less');
   .g-button-group {
     display: inline-flex;
     vertical-align: middle;
     > .g-button {
       border-radius: 0;
       &:not(:first-child) {
-        margin-left: -1px;
+        margin-left: 1px;
       }
       &:first-child {
-        border-top-left-radius: var(--border-radius);
-        border-bottom-left-radius: var(--border-radius);
+        border-top-left-radius: @borderRadius;
+        border-bottom-left-radius: @borderRadius;
       }
       &:last-child {
-        border-top-right-radius: var(--border-radius);
-        border-bottom-right-radius: var(--border-radius);
+        border-top-right-radius: @borderRadius;
+        border-bottom-right-radius: @borderRadius;
       }
       &:hover {
         position: relative;

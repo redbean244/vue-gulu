@@ -1,5 +1,5 @@
 <template>
-  <button class="g-button" :class="{[`icon-${iconPosition}`] : true ,[type] : true , plain , round , disabled}" @click="$emit('click')" :disabled = "disabled">
+  <button class="g-button" :class="{[`icon-${iconPosition}`] : true ,[type] : true ,icon , plain , round , disabled}" :disabled = "disabled">
     <g-icon v-if="icon && !loading" :name="icon" class="icon"></g-icon>
     <g-icon v-if="icon && loading" name="loading" class="loading icon"></g-icon>
     <div class="contents">
@@ -14,7 +14,10 @@ import gIcon from './icon'
 export default {
   name: 'g-button',  
   props:{
-    icon:{},
+    icon:{
+      type: String,
+      default: "setting"
+    },
     iconPosition:{
       type:String,
       default: "left",
@@ -50,7 +53,7 @@ export default {
   // mounted() {
   //   const s = document.createElement('script');
   //   s.type = 'text/javascript';
-  //   s.src = '//at.alicdn.com/t/font_1127796_nndyhd11k3.js';
+  //   s.src = '//at.alicdn.com/t/font_1127796_ny4iq38fru9.js';
   //   document.body.appendChild(s);
   // }
 }
@@ -99,26 +102,41 @@ export default {
     background-color: @primary;
     border: 1px solid @primary;
     color: #fff;
+    svg{
+      fill: #fff;;
+    }
   }
   &.success{
     background-color: @success;
     border: 1px solid @success;
     color: #fff;
+    svg{
+      fill: #fff;;
+    }
   }
   &.info{
     background-color: @info;
     border: 1px solid @info;
     color: #fff;
+    svg{
+      fill: #fff;;
+    }
   }
   &.warning{
     background-color: @warning;
     border: 1px solid @warning;
     color: #fff;
+    svg{
+      fill: #fff;;
+    }
   }
   &.danger{
     background-color: @danger;
     border: 1px solid @danger;
     color: #fff;
+    svg{
+      fill: #fff;;
+    }
   }
 
   &.plain{

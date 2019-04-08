@@ -2,6 +2,17 @@
 title: 按钮
 ---
 
+<script>
+   export default {
+        mounted() {
+            const s = document.createElement('script');
+            s.type = 'text/javascript';
+            s.src = '//at.alicdn.com/t/font_1127796_nndyhd11k3.js';
+            document.body.appendChild(s);
+        }
+   }
+</script>
+
 # Button 按钮
 常用的操作按钮。
 
@@ -89,3 +100,55 @@ title: 按钮
 <br>
 
 <button-demo4></button-demo4>
+
+设置`icon`属性即可，也可以设置在文字右边的 icon 。
+
+``` js{4}
+
+<div>
+    <g-button icon="setting"></g-button>
+    <g-button type="primary" icon="download" iconPosition="right">下载</g-button>
+    <g-button type="primary" icon="thumbs_up">赞</g-button>
+    <g-button type="primary" icon="up"></g-button>
+</div>
+
+```
+
+## 按钮组
+#### 以按钮组的方式出现，常用于多项类似操作。
+<br>
+
+<button-demo5></button-demo5>
+使用`<g-button-group>`标签来嵌套你的按钮。
+``` js{4}
+<div>
+    <g-button-group>
+        <g-button type="primary" icon="left">上一页</g-button>
+        <g-button type="primary" icon="right" iconPosition="right">下一页</g-button>
+    </g-button-group>
+</div> 
+```
+
+## 加载中
+#### 点击按钮后进行数据加载操作，在按钮上显示加载状态。
+<br>
+
+
+<button-demo6></button-demo6>
+
+要设置为 `loading` 状态，只要设置`loading`属性为`true`即可。
+
+``` js{4}
+<g-button type="primary" :loading="true">加载中</g-button>
+```
+
+## Attributes
+
+|参数|说明|类型|可选值|默认值
+ ----|---|----|------|----|
+type|	类型|	string	|primary / success / warning / danger / info / text|	
+plain|	是否朴素按钮|	boolean|	—	|false
+round	|是否圆形按钮	|boolean|	—	|false
+loading	|是否加载中状态|	boolean	|—|	false
+disabled|	是否禁用状态|	boolean	|—|	false
+icon	|图标类名	|string|	—	|—
