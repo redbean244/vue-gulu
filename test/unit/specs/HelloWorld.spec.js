@@ -1,11 +1,11 @@
-import Vue from 'vue'
-import HelloWorld from '@/components/HelloWorld'
+import { expect } from 'chai'
+import { shallowMount } from '@vue/test-utils'
+import Counter from '../../../src/Counter.vue'
 
-describe('HelloWorld.vue', () => {
-  it('should render correct contents', () => {
-    const Constructor = Vue.extend(HelloWorld)
-    const vm = new Constructor().$mount()
-    expect(vm.$el.querySelector('.hello h1').textContent)
-      .toEqual('Welcome to Your Vue.js App')
+describe('Counter.vue', () => {
+  it('increments count when button is clicked', () => {
+    const wrapper = shallowMount(Counter)
+    wrapper.find('button').trigger('click')
+    expect(wrapper.find('div').text()).contains('1')
   })
 })
