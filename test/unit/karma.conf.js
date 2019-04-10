@@ -11,8 +11,14 @@ module.exports = function karmaConfig (config) {
     // 1. install corresponding karma launcher
     //    http://karma-runner.github.io/0.13/config/browsers.html
     // 2. add it to the `browsers` array below.
-    browsers: ['Chrome'],
-    frameworks: ['mocha'],
+    browsers: ['ChromeHeadless'],
+    frameworks: ['mocha','sinon-chai','phantomjs-shim'],
+    client:{
+      chai: {
+        includeStack:true
+      }
+    },
+    
     reporters: ['progress'],
 
     files:['./index.js'],
