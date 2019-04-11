@@ -47,6 +47,16 @@ describe('Input.vue', () => {
       expect(inputElement.readOnly).to.equal(true)
     })
 
+    it('接收 placeholder', () => {
+      vm = new Constructor({
+        propsData: {
+          placeholder: '请输入内容'
+        }
+      }).$mount()
+      const inputElement = vm.$el.querySelector('input')
+      expect(inputElement.placeholder).to.equal('请输入内容')
+    })
+
     it('接收 error', () => {
       vm = new Constructor({
         propsData: {
@@ -73,9 +83,14 @@ describe('Input.vue', () => {
           vm.$on(eventName, callback)
           //触发input的change 事件
           let event = new Event(eventName);
+          Object.defineProperty(
+            event, 'target', {
+              value: {value: 'hi'}, enumerable: true
+            }
+          )
           let inputElement = vm.$el.querySelector('input')
           inputElement.dispatchEvent(event)
-          expect(callback).to.have.been.calledWith(event)
+          expect(callback).to.have.been.calledWith('hi')
         })
     })
   })

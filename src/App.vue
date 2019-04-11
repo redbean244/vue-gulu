@@ -1,14 +1,8 @@
 <template>
   <div id="app">
-        <div class="box">
-          <g-input value="张三" disabled></g-input>
-          <g-input value="李四" readonly></g-input>
-          <g-input value="王五"></g-input>
-        </div>
-        <div class="box">
-          <g-input value="王" error="姓名不能少于两个字"></g-input>
-        </div> 
-</div>
+        <g-input v-model="message"></g-input>
+        <p>{{message}}</p>
+  </div>
 
 
 </template>
@@ -20,6 +14,11 @@ import gButtonGroup from './components/buttonGroup.vue'
 import gInput from './components/input.vue'
 export default {
   name: 'App',
+  data(){
+    return {
+      message:1
+    }
+  },
   components:{
     gButton,gIcon,gButtonGroup,gInput
   },
