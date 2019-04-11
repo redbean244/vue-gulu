@@ -7,7 +7,7 @@ title: 按钮
         mounted() {
             const s = document.createElement('script');
             s.type = 'text/javascript';
-            s.src = '//at.alicdn.com/t/font_1127796_nndyhd11k3.js';
+            s.src = '//at.alicdn.com/t/font_1127796_oygjm0oay8o.js';
             document.body.appendChild(s);
         }
    }
@@ -25,7 +25,7 @@ title: 按钮
 
 使用`type`、`plain`和`round`属性来定义 Button 的样式。
 
-``` js{4}
+``` html
 <div>
     <g-button>默认按钮</g-button>
     <g-button type="primary">主要按钮</g-button>
@@ -63,7 +63,7 @@ title: 按钮
 
 你可以使用`disabled`属性来定义按钮是否可用，它接受一个`Boolean`值。
 
-``` js{4}
+``` html
 <div>
     <g-button disabled>默认按钮</g-button>
     <g-button type="primary" disabled>主要按钮</g-button>
@@ -88,7 +88,7 @@ title: 按钮
 <br>
 
 <button-demo3></button-demo3>
-``` js{4}
+``` html
 <div>
     <g-button type="text">文字按钮</g-button>
     <g-button type="text" disabled>文字按钮</g-button>
@@ -103,7 +103,7 @@ title: 按钮
 
 设置`icon`属性即可，也可以设置在文字右边的 icon 。
 
-``` js{4}
+``` html
 
 <div>
     <g-button icon="setting"></g-button>
@@ -120,7 +120,7 @@ title: 按钮
 
 <button-demo5></button-demo5>
 使用`<g-button-group>`标签来嵌套你的按钮。
-``` js{4}
+``` html
 <div>
     <g-button-group>
         <g-button type="primary" icon="left">上一页</g-button>
@@ -138,7 +138,7 @@ title: 按钮
 
 要设置为 `loading` 状态，只要设置`loading`属性为`true`即可。
 
-``` js{4}
+``` html
 <g-button type="primary" :loading="true">加载中</g-button>
 ```
 

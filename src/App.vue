@@ -1,7 +1,6 @@
 <template>
   <div id="app">
-        <g-input v-model="message"></g-input>
-        <p>{{message}}</p>
+      <g-button type="primary" :loading="true">加载中</g-button>
   </div>
 
 

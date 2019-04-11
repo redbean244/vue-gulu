@@ -1,7 +1,7 @@
 <template>
     <div>
         <g-input v-model="message"></g-input>
-        <p>{{message}}</p>
+        <p>value:{{message}}</p>
     </div>    
 </template>
 
