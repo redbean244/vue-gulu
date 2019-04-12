@@ -1,55 +1,62 @@
 <template>
   <div id="app">
-      <div style="border: 1px solid black;">
-
-        <g-row gutter="20">
-          <g-col>1</g-col>
-          <g-col>2</g-col>
-        </g-row>
-        <g-row gutter="20">
-          <g-col>1</g-col>
-          <g-col>2</g-col>
-          <g-col>3</g-col>
-        </g-row>
-        <g-row gutter="20">
-          <g-col>1</g-col>
-          <g-col>2</g-col>
-          <g-col>3</g-col>
-          <g-col>4</g-col>
-        </g-row>
-        <g-row gutter="20">
-          <g-col span="2">1</g-col>
-          <g-col span="20" offset="2">11</g-col>
-        </g-row>
-        <g-row gutter="20">
-          <g-col span="4">1</g-col>
-          <g-col span="20">11</g-col>
-        </g-row>
-        <g-row gutter="20">
-          <g-col span="4">1</g-col>
-          <g-col span="18" offset="2">11</g-col>
-        </g-row>
-        <g-row gutter="20">
-          <g-col span="4">1</g-col>
-          <g-col span="8" offset="2">11</g-col>
-          <g-col span="8" offset="2">11</g-col>
-        </g-row>
-        <g-row gutter="20">
-          <g-col span="4">1</g-col>
-          <g-col span="4" offset="6">11</g-col>
-          <g-col span="8" offset="2">11</g-col>
-        </g-row>
-      </div>
+    <g-row class="demoRow" gutter="10">
+      <g-col span="8">
+        <div class="demoCol">8</div>
+      </g-col>
+      <g-col span="8" offset="8">
+        <div class="demoCol">8</div>
+      </g-col>
+    </g-row>
+    <g-row class="demoRow" gutter="10">
+      <g-col span="6" offset="6">
+        <div class="demoCol">6</div>
+      </g-col>
+      <g-col span="6" offset="6">
+        <div class="demoCol">6</div>
+      </g-col>
+    </g-row>
+    <g-row class="demoRow" gutter="10">
+      <g-col span="4">
+        <div class="demoCol">4</div>
+      </g-col>
+      <g-col span="4" offset="4">
+        <div class="demoCol">4</div>
+      </g-col>
+      <g-col span="4" offset="8">
+        <div class="demoCol">4</div>
+      </g-col>
+    </g-row>
+    <g-row class="demoRow" gutter="10">
+      <g-col span="2">
+        <div class="demoCol">2</div>
+      </g-col>
+      <g-col span="2" offset="2">
+        <div class="demoCol">2</div>
+      </g-col>
+      <g-col span="2">
+        <div class="demoCol">2</div>
+      </g-col>
+      <g-col span="2" offset="2">
+        <div class="demoCol">2</div>
+      </g-col>
+      <g-col span="2">
+        <div class="demoCol">2</div>
+      </g-col>
+      <g-col span="2" offset="2">
+        <div class="demoCol">2</div>
+      </g-col>
+      <g-col span="2">
+        <div class="demoCol">2</div>
+      </g-col>
+      <g-col span="2" offset="2">
+        <div class="demoCol">2</div>
+      </g-col>
+    </g-row>
   </div>
-
-
 </template>
 
 <script>
-import gButton from './components/button.vue'
-import gIcon from './components/icon.vue'
-import gButtonGroup from './components/buttonGroup.vue'
-import gInput from './components/input.vue'
 import gRow from './components/row.vue'
 import gCol from './components/col.vue'
 export default {
@@ -60,19 +67,32 @@ export default {
     }
   },
   components:{
-    gButton,gIcon,gButtonGroup,gInput,gRow,gCol
-  },
-  mounted() {
-    const s = document.createElement('script');
-    s.type = 'text/javascript';
-    s.src = '//at.alicdn.com/t/font_1127796_nndyhd11k3.js';
-    document.body.appendChild(s);
+    gRow,gCol
   }
 }
 </script>
 
 <style lang="less">
+* {
+  box-sizing: border-box;
+}
 
- 
+.demoRow{
+    margin: 10px 0;
+    .demoCol{
+        height: 50px;
+        border: 1px solid #ccc;
+        background: #eee;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        justify-content: center;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center;
+    }
+}
 
 </style>
