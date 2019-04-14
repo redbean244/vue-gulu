@@ -22,6 +22,7 @@ module.exports = {
                     '/components/button',
                     '/components/input',
                     '/components/layout',
+                    '/components/container',
                 ]
             }
             
