@@ -1,5 +1,5 @@
 <template>
-  <div class="container" :class="containerClass">
+  <div class="g-container" :class="containerClass">
     <slot></slot>
   </div>
 </template>
@@ -24,11 +24,11 @@
 </script>
 
 <style lang="less" scoped>
-  .container {
+  .g-container {
     flex-grow: 1;
     display: flex;
     flex-direction: column;
-    border: 1px solid red;
+    // border: 1px solid red;
     &.hasAside {
       flex-direction: row;
     }

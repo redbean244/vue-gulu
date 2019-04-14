@@ -1,5 +1,5 @@
 <template>
-  <div class="aside">
+  <div class="g-aside">
     <slot></slot>
   </div>
 </template>
