@@ -5,18 +5,18 @@
 </template>
 <script>
   export default {
-    name: 'GuluLayout',
+    name: 'GuluContainer',
     data () {
       return {
         containerClass: {
-          hasSider: false
+          hasAside: false
         }
       }
     },
     mounted () {
       this.$children.forEach((vm) => {
-        if (vm.$options.name === 'GuluSider') {
-          this.containerClass.hasSider = true
+        if (vm.$options.name === 'GuluAside') {
+          this.containerClass.hasAside = true
         }
       })
     }
@@ -29,7 +29,7 @@
     display: flex;
     flex-direction: column;
     border: 1px solid red;
-    &.hasSider {
+    &.hasAside {
       flex-direction: row;
     }
   }

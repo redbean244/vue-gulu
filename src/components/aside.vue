@@ -1,11 +1,11 @@
 <template>
-  <div class="sider">
+  <div class="aside">
     <slot></slot>
   </div>
 </template>
 <script>
   export default {
-    name: 'GuluSider'
+    name: 'GuluAside'
   }
 </script>
 
