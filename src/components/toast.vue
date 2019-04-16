@@ -1,9 +1,9 @@
 <template>
     <div class="wrapper" :class="toastClasses">
-        <div class="toast" ref="toast">
+        <div class="toast">
             <slot></slot>
-            <div class="line" ref="line"></div>
-            <span class="close" v-if="closeButton" @click="onClickClose">
+            <div class="line"  v-if="closeButton.text"></div>
+            <span class="close" v-if="closeButton.text" @click="onClickClose">
                 {{closeButton.text}}
             </span>
         </div>
@@ -15,12 +15,11 @@
     name: 'GuluToast',
     props:{
         autoClose:{
-            type:Boolean,
-            default: false
-        },
-        autoCloseDelay:{
-            type:Number,
-            default: 1000
+            type: [Boolean, Number],
+            default: 5,
+            validator (value) {
+            return value === false || typeof value === 'number';
+            }
         },
         closeButton: {
             type: Object,
@@ -53,7 +52,7 @@
             if (this.autoClose){
                 setTimeout(()=>{
                     this.close();
-                },this.autoCloseDelay)
+                },this.autoClose * 1000)
             }
         },
         close(){
