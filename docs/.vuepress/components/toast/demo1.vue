@@ -1,6 +1,8 @@
 <template>
   <div id="app">
-      <g-button @click="showToast">中间弹出</g-button>
+      <g-button @click="showToast1">上方弹出</g-button>
+      <g-button @click="showToast2">中间弹出</g-button>
+      <g-button @click="showToast3">下方弹出</g-button>
   </div>
 </template>
 
@@ -16,16 +18,19 @@ export default {
     gToast,gButton
   },
   methods: {
+    showToast1(){
+      this.showToast('top')
+    },
+    showToast2(){
+      this.showToast('middle')
+    },
+    showToast3(){
+      this.showToast('bottom')
+    },
     showToast(position){
       this.$toast('点击弹出提示', {
-        position : "middle",
-        closeButton: {
-          text: '关闭',
-          callback () {
-            console.log('关闭了')
-          }
-        },
-        autoClose: false,
+        position,
+        autoClose: 2,
       })
     }
   }
