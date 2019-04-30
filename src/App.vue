@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-        <g-tabs :selected.sync="selectedTab" >
+        <g-tabs :selected.sync="selectedTab" @update:selected="yyy">
           <g-tabs-head>
             <template slot="actions">
               <button>设置</button>
@@ -51,7 +51,10 @@ export default {
     }
   },
   methods: {
-    
+    yyy(data){
+      console.log('yyy')
+      console.log(data)
+    }
   }
 }
 </script>
