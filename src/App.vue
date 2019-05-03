@@ -33,7 +33,7 @@
 <script>
 import Vue from 'vue'
 
-import gIcon from './components/icon'
+import gIcon from 'components/icon'
 import gTabs from './components/tabs'
 import gTabsHead from './components/tabs-head'
 import gTabsBody from './components/tabs-body'
