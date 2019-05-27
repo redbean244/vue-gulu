@@ -34,8 +34,9 @@
 </script>
 <style lang="less" scoped>
   .tabs-pane {
+    padding: 1em;
     &.active {
-      background: red;
+      
     }
   }
 </style> 
