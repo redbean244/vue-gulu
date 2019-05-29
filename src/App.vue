@@ -1,11 +1,14 @@
 <template>
   <div id="app">
+    <g-tabs>
+      <div>hi</div>
+    </g-tabs>
     <g-tabs :selected.sync="selectedTab" @update:selected="yyy">
       <g-tabs-head>
         <template slot="actions">
           <button>设置</button>
         </template>
-        <g-tabs-item name="woman"   disabled>
+        <g-tabs-item name="woman"  disabled>
           <g-icon name="setting"></g-icon>美女
         </g-tabs-item>
         <g-tabs-item name="finance">
