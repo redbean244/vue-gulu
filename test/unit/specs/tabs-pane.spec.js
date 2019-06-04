@@ -3,8 +3,8 @@ import Vue from 'vue'
 import Tabs from '../../../src/components/tabs'
 import TabsHead from '../../../src/components/tabs-head'
 import TabsBody from '../../../src/components/tabs-body'
-import TabsItem from '../../../src/components/src/tabs-item'
-import TabsPane from '../../../src/components/src/tabs-pane'
+import TabsItem from '../../../src/components/tabs-item'
+import TabsPane from '../../../src/components/tabs-pane'
 
 Vue.component('g-tabs', Tabs)
 Vue.component('g-tabs-head', TabsHead)
