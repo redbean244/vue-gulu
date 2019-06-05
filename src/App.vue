@@ -1,5 +1,5 @@
 <template>
-  <div id="app">
+  <!-- <div id="app">
     <g-tabs>
       <div>hi</div>
     </g-tabs>
@@ -30,6 +30,20 @@
         </g-tabs-pane>
       </g-tabs-body>
     </g-tabs>
+  </div> -->
+  <div id="app" style="padding-top: 100px; padding-left: 100px;">
+    <g-popover>
+      <template slot="content">
+        <div>popover内容</div>
+      </template>
+      <button>点我</button>
+    </g-popover>
+    <g-popover>
+      <template slot="content">
+        <div>popover内容</div>
+      </template>
+      <button>点我</button>
+    </g-popover>
   </div>
 </template>
 
@@ -42,12 +56,13 @@ import gTabsHead from './components/tabs-head'
 import gTabsBody from './components/tabs-body'
 import gTabsItem from './components/tabs-item'
 import gTabsPane from './components/tabs-pane'
+import gPopover from './components/popover'
 
 
 export default {
   name: 'App',
   components:{
-    gTabs,gTabsHead,gTabsBody,gTabsItem,gTabsPane,gIcon
+    gTabs,gTabsHead,gTabsBody,gTabsItem,gTabsPane,gIcon,gPopover
   },
   data(){
     return {
