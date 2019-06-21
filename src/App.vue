@@ -31,19 +31,22 @@
       </g-tabs-body>
     </g-tabs>
   </div> -->
-  <div id="app" style="padding-top: 100px; padding-left: 100px; border: 1px solid red;">
-    <g-popover>
-      <template slot="content">
-        <div>popover内容</div>
-      </template>
-      <button>点我</button>
-    </g-popover>
-    <g-popover>
-      <template slot="content">
-        <div>popover内容</div>
-      </template>
-      <button>点我</button>
-    </g-popover>
+  <div id="app" style=" padding-top: 100px; padding-left: 100px; border: 1px solid red;">
+    <div style="overflow: hidden;border: 1px solid green; padding: 5px;"
+      @click="yyy">
+      <g-popover>
+        <template slot="content">
+          <div>popover内容</div>
+        </template>
+        <button>点我</button>
+      </g-popover>
+      <g-popover>
+        <template slot="content">
+          <div>popover内容</div>
+        </template>
+        <button>点我</button>
+      </g-popover>
+    </div>
   </div>
 </template>
 
@@ -70,9 +73,8 @@ export default {
     }
   },
   methods: {
-    yyy(data){
+    yyy(){
       console.log('yyy')
-      console.log(data)
     }
   },
   created() {
