@@ -31,20 +31,19 @@
       </g-tabs-body>
     </g-tabs>
   </div> -->
-  <div id="app" style=" padding-top: 100px; padding-left: 100px; border: 1px solid red;">
-    <div style="overflow: hidden;border: 1px solid green; padding: 5px;"
-      @click="yyy">
+  <div id="app">
+    <div style="overflow: hidden; padding: 150px;">
       <g-popover>
         <template slot="content">
           <div>popover内容</div>
         </template>
-        <button>点我</button>
+        <g-button>点我</g-button>
       </g-popover>
       <g-popover>
         <template slot="content">
           <div>popover内容</div>
         </template>
-        <button>点我</button>
+        <g-button>点我</g-button>
       </g-popover>
     </div>
   </div>
@@ -55,6 +54,7 @@ import Vue from 'vue'
 
 import gIcon from './components/icon'
 import gTabs from './components/tabs'
+import gButton from './components/button'
 import gTabsHead from './components/tabs-head'
 import gTabsBody from './components/tabs-body'
 import gTabsItem from './components/tabs-item'
@@ -65,7 +65,7 @@ import gPopover from './components/popover'
 export default {
   name: 'App',
   components:{
-    gTabs,gTabsHead,gTabsBody,gTabsItem,gTabsPane,gIcon,gPopover
+    gTabs,gTabsHead,gTabsBody,gTabsItem,gTabsPane,gIcon,gPopover,gButton
   },
   data(){
     return {
